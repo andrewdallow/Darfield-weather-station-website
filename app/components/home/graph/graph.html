@@ -1,0 +1,42 @@
+<div class="container" id="recent-obs-graph">
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">Recent Observations</div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-md-12 hidden-xs">
+                            <span class="graphTitles">High Wind Gust & Direction (km/h)</span><br><br>
+                            <table class="wind24Hr">
+                                <tr>
+                                    <td class="windSpeed24Hr" ng-repeat="direction in graphs24Hrs.windGustDirText track by $index">{{ direction }}</td>
+                                </tr>
+                                <tr>
+                                    <td class="windDir24Hr" ng-repeat="point in graphs24Hrs.windGustDir track by $index"><i class="wi wi-wind from-{{ point }}-deg"></i></td>
+                                    
+                                </tr>
+                                <tr>
+                                    <td class="windSpeed24Hr" ng-repeat="speed in graphs24Hrs.windGust track by $index">{{ speed }}</td>
+                                </tr>
+                            </table>
+                            <hr>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">   
+                            <highchart id="temp24Hr" config="temp24Hr"></highchart>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <highchart id="rainBaro24Hr" config="rainBaro24Hr"></highchart>
+                        </div>
+                    </div>
+                    
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

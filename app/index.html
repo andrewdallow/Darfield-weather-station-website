@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="wxApp" ng-controller="mainCtrl">
+    <head>
+        <base href="/beta/">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="fragment" content="!">        
+
+        <link href="assets/css/custom.min.css" rel="stylesheet" type="text/css"/>
+    
+        <link href="bower_components/html5-boilerplate/dist/css/normalize.css" rel="stylesheet" type="text/css"/>
+        <link href="bower_components/html5-boilerplate/dist/css/main.css" rel="stylesheet" type="text/css"/>
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"> 
+
+
+        <!-- Weather Icons -->       
+        <link href="bower_components/weather-icons/css/weather-icons-wind.css" rel="stylesheet" type="text/css"/>
+        
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        
+        <title ng-bind="page.title() + ' - Darfield Weather Station'"></title>
+        <meta name="description" content="{{ page.description()}}">
+        <meta name="keywords" content="HTML,CSS,JSON,JavaScript">
+        <meta name="author" content="Andrew Dallow">
+    </head>
+
+    <body>
+        
+        <div class="container">
+
+            <div ng-include="'components/core/header/header.html'"></div>
+
+            <div id="main" >
+                <div ng-view></div>  
+            </div>
+
+            <div ng-include="'components/core/footer/footer.html'"></div>
+
+        </div>
+        <!-- External Javascripts -->
+        <script src="assets/js/external.min.js" type="text/javascript"></script>
+        
+        <!--Single Page Application -->
+        <script src="assets/js/wxApp.min.js" type="text/javascript"></script>
+        
+        <!-- Google Tag Manager -->
+        <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-57MB5K"
+                          height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+        <script>(function (w, d, s, l, i) {
+                        w[l] = w[l] || [];
+                        w[l].push({'gtm.start':
+                                    new Date().getTime(), event: 'gtm.js'});
+                        var f = d.getElementsByTagName(s)[0],
+                                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
+                        j.async = true;
+                        j.src =
+                                '//www.googletagmanager.com/gtm.js?id=' + i + dl;
+                        f.parentNode.insertBefore(j, f);
+                    })(window, document, 'script', 'dataLayer', 'GTM-57MB5K');</script>
+        <!-- End Google Tag Manager -->
+    </body>
+</html>

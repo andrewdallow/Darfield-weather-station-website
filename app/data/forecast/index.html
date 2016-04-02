@@ -1,0 +1,212 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>Forecast Sampler</title>
+    <style>
+body {
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: 10pt;
+  background-color: #ffffff;
+}
+h1 {
+  font-size: 110%;
+}
+    </style>
+  </head>
+  <body>
+
+<p>
+This skin illustrates the use of data from the forecasting module.
+</p>
+
+
+<h1>Forecast Table</h1>
+<p>The table of forecast data is displayed automatically by including a single
+file called forecast_table.inc.  Modify the first part of that file to control
+which data are shown in the table.</p>
+
+
+
+
+
+
+<style>
+.forecast {
+  clear: both;
+}
+.forecast td {
+  font-size: 80%;
+  text-align: left;
+}
+.forecast table {
+  table-layout: fixed;
+}
+.legend {
+}
+.legend tr {
+  vertical-align: top;
+}
+.summary {
+}
+.summary tr {
+  vertical-align: top;
+}
+.period {
+}
+.disclosure {
+  width: 20px;
+}
+.col-outlook {
+  width: 36px;
+}
+.col-date {
+  width: 64px;
+}
+.col-temp {
+  width: 30px;
+}
+.col-dewpoint {
+  width: 30px;
+}
+.col-humidity {
+  width: 30px;
+}
+.col-wind {
+  width: 60px;
+  height: 32px;
+}
+.col-pop {
+  width: 40px;
+}
+.col-precip {
+}
+.col-obvis {
+}
+.col-tides {
+  width: 80px;
+}
+.col-sun {
+  width: 30px;
+}
+.col-moon {
+  width: 30px;
+}
+.col-moonphase {
+  width: 30px;
+}
+.units {
+  color: #aaaaaa;
+}
+.day {
+  font-size: 120%;
+}
+.hour {
+  font-size: 80%;
+}
+.date {
+  font-size: 80%;
+}
+.temphi {
+  color: #ff4444;
+}
+.templo {
+  color: #4444ff;
+}
+.windgust {
+  color: #aaaaaa;
+}
+.winddir {
+  color: #aaaaaa;
+}
+.winddir-img {
+  width: 32px;
+}
+.outlook-img {
+  width: 32px;
+}
+.legend-img {
+  width: 15px;
+}
+.pop-img {
+  width: 8px;
+}
+.precip-img {
+  width: 32px;
+}
+.obvis-img {
+  width: 32px;
+}
+.sources p {
+  font-size: 8pt;
+  font-style: italic;
+  color: #aaaaaa;
+}
+</style>
+<script type='text/javascript'>
+function toggle(control, id) {
+  elem = document.getElementById(id + '.hours');
+  if(elem) {
+    if(elem.style.display != 'none') {
+      elem.style.display = 'none';
+      control.src = 'icons/triangle-right.png'
+    } else {
+      elem.style.display = 'inline';
+      control.src = 'icons/triangle-down.png'
+    }
+  }
+}
+</script>
+
+<div class='forecast'>
+
+
+  <div class='legend'>
+    <table>
+      <tr>
+        <td class='col-date'></td>
+        <td class='col-outlook'></td>
+        <td class='col-temp'><img src='icons/thermometer-red.png' class='legend-img' alt='T' title='temperature' /><br/><span class='units'>&#176;F</span></td>
+        <td class='col-wind' style='text-align:center'><img src='icons/flag.png' class='legend-img' alt='W' title='wind' /><br/><span class='units'> mph</span></td>
+        <td class='col-pop'><img src='icons/pop.png' class='legend-img' alt='PoP' title='probability of precipitation' /><br/><span class='units'> in</span></td>
+        <td class='col-precip'></td>
+        <td class='col-obvis'></td>
+      </tr>
+    </table>
+  </div>
+
+
+
+
+
+  <div class='sources'>
+    <p>
+      WU forecast
+    </p>
+  </div>
+
+</div>
+
+
+
+
+<h1>Zambretti</h1>
+<p>
+The forecast is Fine weather<br/>
+<span style="font-size: 8pt; font-style: italic; color: #aaaaaa;">
+Issued at 01-Mar-2016 23:24
+</span>
+</p>
+
+</p>
+
+<p>
+<small>
+forecast version: 3.0.8<br/>
+skin version: 3.0.8<br/>
+</small>
+</p>
+
+
+  </body>
+</html>
+

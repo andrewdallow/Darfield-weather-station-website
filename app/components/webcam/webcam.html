@@ -1,0 +1,50 @@
+<div data-ads></div>
+<div class="container" id="webcam">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">Webcam, Looking South</div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <figure class="selectedWebcam">
+                                <img class="img-responsive img-rounded" ng-src="{{ webcamImagesPath}}/{{ currentSelection}}{{ webcamExt}}?{{ cacheReset}}">
+                                <figcaption>
+                                    Images are taken every 5 minutes during daylight hours only.<br>
+                                    Click thumbnail images to enlarge.  
+                                </figcaption>
+
+                            </figure>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class=" col-xs-6 col-sm-4 col-md-2 webcamDate" dir-paginate="image in webcamImages | itemsPerPage: imagesPerPage">
+
+                                <a href="" class="thumbnail">
+                                    <img class="webcam" ng-click="selectImage(image.name)" class="img-thumbnail" ng-src="{{ webcamImagesPath}}/{{ image.name}}-thm{{ webcamExt}}?{{ cacheReset}}">
+
+                                    <p>{{ image.date}}</p>
+
+
+                                </a>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12 paginationControls">
+                                <dir-pagination-controls></dir-pagination-controls>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+

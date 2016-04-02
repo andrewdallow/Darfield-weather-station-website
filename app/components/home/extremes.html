@@ -1,0 +1,51 @@
+<div class="container" id="daily-extremes">
+            
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">Today's Extremes</div>
+                        <div class="panel-body">
+                            <table class="table table-hover">
+                                <tbody>
+                                    <tr ng-repeat="extreme in extremes.today">
+                                        <td>
+                                            {{extreme.name}}
+                                        </td>
+                                        <td>
+                                            <div ng-bind-html="extreme.value + extreme.unit"></div>
+                                        </td>
+                                        <td>
+                                            {{extreme.time}}
+                                        </td>
+                                    </tr>
+                                    
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">Yesterday's Extremes</div>
+                        <div class="panel-body">
+                            <table class="table table-hover">
+                                <tbody>
+                                    <tr ng-repeat="extreme in extremes.yesterday">
+                                        <td>
+                                            {{ extreme.name }}
+                                        </td>
+                                        <td>
+                                            <div ng-bind-html="extreme.value + extreme.unit"></div>
+                                        </td>
+                                        <td>
+                                            {{ extreme.time }}
+                                        </td>
+                                    </tr>
+                                    
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>

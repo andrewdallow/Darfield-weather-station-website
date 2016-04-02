@@ -1,0 +1,14 @@
+<div class="panel panel-default">
+    <div class="panel-heading">Barometric Pressure</div>
+    <div class="panel-body data-panel-pressure">
+        
+        <div class="row">
+            <div class="col-xs-8 baroText">
+                <span highlighter="current.barometer.value">{{ current.barometer.value }} <span class="unitsBig" ng-bind-html="current.barometer.unit">hPa</span></span>
+            </div>
+            <div class="col-xs-4 baroTrendText">
+                <span highlighter="current.barometerTrendData.value"><span class="glyphicon glyphicon-arrow-{{ current.baroTrend }} {{ current.baroTrend }}"></span> {{ current.barometerTrendData.value }} <span ng-bind-html="current.barometerTrendData.unit"></span></span>
+            </div>
+        </div>    
+    </div>
+</div>

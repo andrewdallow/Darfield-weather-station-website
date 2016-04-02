@@ -1,0 +1,36 @@
+<div data-ads></div>
+<div class="container" id="graphs">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">24 Hour Graphs</div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="btn-group btn-group-lg" role="group">
+                                <button class="btn btn-default" ng-class="{'active': $index === selected}" ng-repeat="button in buttons" ng-click="setExtreme(button.time, $index)" type="button">{{ button.time}} Hrs</button>
+
+
+
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="row">
+                        <div class="col-md-12" >
+                            <div class="loader" ng-show="loading">
+                                <svg class="circular" viewBox="25 25 50 50">
+                                <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10"/>
+                                </svg>
+                            </div>                            
+                            <highchart id="" ng-repeat="item in charts" ng-mousemove="graphCombo($event)" config="item.chart"></highchart>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

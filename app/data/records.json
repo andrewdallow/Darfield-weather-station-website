@@ -1,0 +1,16 @@
+[
+	{"name": "Highest Temperature", "value": "35.5", "date": "6 Feb 2011", "time": "15:37","unit": "&degC"},
+	{"name": "Lowest Temperature", "value": "-8.0", "date": "7 Jun 2012", "time": "03:03", "unit": "&degC"},
+	{"name": "Warmest Night", "value": "25.7", "date": "6 Feb 2011", "time": "00:02","unit": "&degC"},
+	{"name": "Coldest Day", "value": "0.7", "date": "6 Jun 2012", "time" : "14:56","unit": "&degC"},
+	{"name": "Highest Daily Rainfall", "value": "81.6", "date": "17 Jun 2013", "time": "","unit": " mm"},
+	{"name": "Highest Rain Rate", "value": "113.0", "date": "8 Dec 2013", "time": "15:34", "unit": " mm/hr"},
+	{"name": "Highest Wind Gust", "value": "110", "date": "2 Aug 2014", "time": "12:24", "unit": " km/h"},
+	{"name": "Highest Pressure", "value": "1041.7", "date": "30 Oct 2010", "time": "00:49", "unit": " hPa"},
+	{"name": "Lowest Pressure", "value": "953.0", "date": "24 Jul 2011", "time": "05:46", "unit": " hPa"},
+	{"name": "Highest Dewpoint", "value": "22.2", "date": "12 Oct 2010", "time": "11:46", "unit": "&degC"},
+	{"name": "Lowest Dewpoint", "value": "-49.5", "date": "23 Aug 2012", "time": "08:03", "unit": "&degC"},
+	{"name": "Highest Humidity", "value": "100", "date": "18 Aug 2012", "time": "15:20", "unit": "%"},
+	{"name": "Lowest Humidity", "value": "10", "date": "26 Sep 2010", "time": "15:58", "unit": "%"}
+		
+] 

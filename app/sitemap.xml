@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+	<url>
+		<loc>http://www.darfield-weather.co.nz/beta/</loc>
+	</url>
+	<url>
+		<loc>http://www.darfield-weather.co.nz/beta/noaa-style-reports</loc>
+	</url>
+	<url>
+		<loc>http://www.darfield-weather.co.nz/beta/historicGraphs</loc>
+	</url>
+	<url>
+		<loc>http://www.darfield-weather.co.nz/beta/records</loc>
+	</url>
+	<url>
+		<loc>http://www.darfield-weather.co.nz/beta/webcam</loc>
+	</url>
+	<url>
+		<loc>http://www.darfield-weather.co.nz/beta/about</loc>
+	</url>
+	<url>
+		<loc>http://www.darfield-weather.co.nz/beta/graphs</loc>
+	</url>
+	<url>
+		<loc>http://www.darfield-weather.co.nz/beta/forecast</loc>
+	</url>
+</urlset>

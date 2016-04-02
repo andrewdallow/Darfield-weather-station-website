@@ -1,0 +1,22 @@
+{
+    "elements": {
+        "dir-pagination-controls": {},
+        "uib-tabset": {
+            "attributes": {
+                "active": {}
+            }
+        },
+        "highchart": {
+            "attributes": {
+                "id": {},
+                "config": {}
+            }
+        }
+    },
+    "attributes": {
+        "ng-mousemove": {},
+        "highlighter": {},
+        "bs-active-link": {},
+        "dir-paginate": {}
+    }
+}

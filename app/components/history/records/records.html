@@ -1,0 +1,40 @@
+<div class="container" id="records">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">Station Records</div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <table class="table table-hover">
+                                <tr>
+                                    <th>Record</th>
+                                    <th>Value</th>
+                                    <th>Date</th>
+                                    <th>Time</th>
+                                </tr>
+                                <tbody>                                    
+                                    <tr ng-repeat="record in records">
+                                        <td>
+                                            {{record.name}}
+                                        </td>
+                                        <td>
+                                            <div ng-bind-html="record.value + record.unit"></div>
+                                        </td>
+                                        <td>
+                                            {{record.date}}
+                                        </td>
+                                        <td>
+                                            {{record.time}}
+                                        </td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

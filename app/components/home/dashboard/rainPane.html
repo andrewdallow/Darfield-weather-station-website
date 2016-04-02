@@ -1,0 +1,51 @@
+<div class="panel panel-default">
+    <div class="panel-heading">Rain</div>
+    <div class="panel-body data-panel-rain">
+
+        <div class="row">
+            <div class="col-xs-4">
+                <img id="outlook" class="img-responsive" ng-src="assets/img/{{ current.ZambrettiForcastCode}}.png" title="{{current.ZambrettiForcastLabel}}"/>
+            </div>
+            <div class="col-xs-8">
+                <div class="row">
+                    <div class="col-xs-12 dayRainTotal">
+                        <span highlighter="current.rainSumDay.value">{{ current.rainSumDay.value }} <span class="unitsBig" ng-bind-html="current.rainSumDay.unit"></span></span>
+                    </div>
+                    <div class="col-xs-12 rainRateText">
+                        <span highlighter="current.rainRate.value">{{ current.rainRate.value === "0.0" ? "Last: " + current.dateoflastrainalways : "Rate: " + current.rainRate.value + " " + current.rainRate.unit }}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-4">
+                <div class="row">
+                    <div class="col-xs-12">Rain Days</div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12 rainStats"><span highlighter="current.dayswithrainyear">{{ current.dayswithrainyear }}</span></div>
+                </div>
+            </div>
+            <div class="col-xs-4 rainStatsText1">
+                <div class="row">
+                    <div class="col-xs-12">Month</div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12 rainStats"><span highlighter="current.rainSumMonth.value">{{ current.rainSumMonth.value}}</span></div>
+                </div>
+            </div>
+            <div class="col-xs-4 rainStatsText2">
+                <div class="row">
+                    <div class="col-xs-12">Year</div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12 rainStats"><span highlighter="current.rainSum.value">{{ current.rainSum.value}}</span></div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">Live Rainfall</div>
+            <div class="col-xs-12"><highchart id="liveRain" config="liveRain"></highchart></div>
+        </div>
+    </div>
+</div>
