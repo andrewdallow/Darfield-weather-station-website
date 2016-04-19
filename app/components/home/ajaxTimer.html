@@ -2,21 +2,21 @@
 <div class="col-xs-12">
     <div class="panel panel-default">
         <div class="panel-body ajaxTimmer">
-            <div class="col-xs-2">
+            <div class="col-xs-3 col-md-2">
                 <div class="btn-group btn-group-xs" role="group">
                     <button ng-repeat="unit in unitTypes" ng-click="convertUnits(unit)" type="button" ng-disabled="unit === selectedUnit" class="btn btn-default">{{ unit }}</button>                    
                 </div>
 
             </div>
-            <div class="col-xs-2 col-md-2">
-                <span class="ng-hide label label-success" ng-hide="!stationOnline">Online</span>.
+            <div class="col-xs-3 col-md-2">
+                <span class="ng-hide label label-success" ng-hide="!stationOnline">Online</span>
                 <span class="ng-hide label label-danger" ng-hide="stationOnline">Offline</span>
             </div>
-            <div class="col-xs-7 col-sm-5">
+            <div class="col-xs-6 col-sm-5">
                 <span highlighter="current.time">Updated: {{ getDateString(current.time) }} <span class=" ng-hide timeSinceUpdate" ng-hide="!stationOnline">({{ secondsAgo }} sec ago)</span></span>
             </div>
             
-            <div class="col-xs-2">
+            <div class="col-md-2 col-xs-12">
                 <div class="btn-group btn-group-xs" role="group">
                     <button type="button" class="btn btn-default" ng-click="restartUpdates()" ng-hide="hideRestart">Updates Stopped. Click to Restart</button>
                 </div>

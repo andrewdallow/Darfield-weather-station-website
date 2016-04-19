@@ -17,8 +17,8 @@
             $scope.page.setTitle('Home');
             $scope.page.setDescription(
                 'Live Weather data at Darfield, New Zealand. Including: ' +
-                    'Temperature, Wind, Rainfall, Pressure, Humidity.'
-            );
+                'Temperature, Wind, Rainfall, Pressure, Humidity.'
+                );
 
             var orgRealtimeData = {},
                 orgExtremes,
@@ -80,11 +80,11 @@
             $scope.getDateString = function (timestamp) {
                 var time = new Date(timestamp),
                     dateString = addZero(time.getDate()) + '-' +
-                        months[time.getMonth()] + '-' +
-                        time.getFullYear() + ' ' +
-                        addZero(time.getHours()) + ':' +
-                        addZero(time.getMinutes()) + ':' +
-                        addZero(time.getSeconds());
+                    months[time.getMonth()] + '-' +
+                    time.getFullYear() + ' ' +
+                    addZero(time.getHours()) + ':' +
+                    addZero(time.getMinutes()) + ':' +
+                    addZero(time.getSeconds());
 
                 return dateString;
             };
@@ -109,13 +109,13 @@
                     timeZone = 12 * 3600 * 1000;
                 $scope.temp24Hr.series[0].pointStart = Date.parse(
                     $scope.graphs24Hrs.timedate
-                ) - timeOffset + timeZone;
+                    ) - timeOffset + timeZone;
                 $scope.rainBaro24Hr.series[0].pointStart = Date.parse(
                     $scope.graphs24Hrs.timedate
-                ) - timeOffset + timeZone;
+                    ) - timeOffset + timeZone;
                 $scope.rainBaro24Hr.series[1].pointStart = Date.parse(
                     $scope.graphs24Hrs.timedate
-                ) - timeOffset + timeZone;
+                    ) - timeOffset + timeZone;
 
                 $scope.temp24Hr.series[0].data = $scope.graphs24Hrs.temp;
                 $scope.rainBaro24Hr.series[0].data = $scope.graphs24Hrs.rain;
@@ -162,7 +162,7 @@
                 //Set height of background rectangle 
                 $scope.thermo.series[0].data =
                     [parseFloat($scope.current.tempMaxValueT.value) +
-                        thermoBackgroundOffset];
+                            thermoBackgroundOffset];
                 //Update Thermometer Scales
                 $scope.thermo.yAxis[0].max =
                     parseFloat($scope.current.tempMaxValueT.value) + tempOffset;
@@ -264,7 +264,7 @@
                     angular.forEach(realtimeConvertable, function (measure) {
                         $scope.current[measure] = unitConverter.convert(
                             orgRealtimeData[measure]
-                        );
+                            );
                     });
                 }
             }
@@ -318,9 +318,13 @@
              * Resets ans starts the ajax timer
              */
             function startAjaxTimer() {
-                stopAjaxTimer();
-                $scope.secondsAgo = 0;
-                timer = $timeout($scope.ajaxTimer, 1000);
+                if ($scope.numUpdates < totUpdates) {
+                    if ($scope.stationOnline) {
+                        stopAjaxTimer();
+                        $scope.secondsAgo = 0;
+                        timer = $timeout($scope.ajaxTimer, 1000);
+                    }
+                }
             }
 
             /**
@@ -334,34 +338,37 @@
 
                 } else {
                     stopAjaxTimer();
-                    stopRapidUpdate();
                 }
 
             };
 
             function rapidUpdate() {
-                $http.get("data/now.json?" + (new Date()).getTime())
-                    .success(function (data) {
+                if ($scope.stationOnline && $scope.hideRestart) {
+                    $http.get("data/now.json?" + (new Date()).getTime())
+                        .success(function (data) {
 
-                        angular.forEach(data, function (value, key) {
-                            if (key !== 'units') {
-                                if (key === 'time') {
-                                    var time = new Date(value * 1000);
+                            angular.forEach(data, function (value, key) {
+                                if (key !== 'units') {
+                                    if (key === 'time') {
+                                        var time = new Date(value * 1000);
 
-                                    orgRealtimeData[key] = time;
-                                } else if (key === 'windDir') {
-                                    orgRealtimeData[key] = value;
-                                } else {
-                                    orgRealtimeData[key].value = value;
+                                        orgRealtimeData[key] = time;
+                                    } else if (key === 'windDir') {
+                                        orgRealtimeData[key] = value;
+                                    } else {
+                                        orgRealtimeData[key].value = value;
+                                    }
                                 }
-                            }
-                        });
-                        convertRealtimeUnits();
-                        checkStationOnline();
-                        startAjaxTimer();
-                        updateLiveData();
+                            });
+                            convertRealtimeUnits();
+                            checkStationOnline();
+                            startAjaxTimer();
+                            updateLiveData();
 
-                    });
+                        });
+                } else {
+                    stopRapidUpdate();
+                }
             }
 
             /**
@@ -378,7 +385,7 @@
              * Retreive realtime JSON data and update the dashboard
              */
             function ajaxRealtime() {
-                if ($scope.stationOnline) {
+                if ($scope.stationOnline && $scope.hideRestart) {
 
                     $http.get("data/realtime.json?" + (new Date()).getTime())
                         .success(function (response) {
@@ -389,9 +396,6 @@
                             pauseUpdates($scope.numUpdates);
                             rapidUpdate();
 
-
-
-
                         });
 
                     $http.get("data/extremes.json?" + (new Date()).getTime())
@@ -401,7 +405,7 @@
                         });
                 } else {
                     $interval.cancel(ajaxRealtimeTimer);
-                    stopRapidUpdate();
+
                 }
             }
             /**

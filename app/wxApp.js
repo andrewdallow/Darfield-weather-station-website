@@ -18,19 +18,20 @@
             $routeProvider,
             $locationProvider
         ) {
-            $locationProvider.html5Mode(true).hashPrefix('!');
+            $locationProvider.html5Mode(true);
+            $locationProvider.hashPrefix('!');
             $routeProvider
                 .when('/', {
                     templateUrl: 'components/home/home.html',
                     controller: 'homeController'
                 })
-                .when('/webcam/latest', {
-                    templateUrl: 'components/webcam/webcam.html',
-                    controller: 'webcamController'
-                })
                 .when('/webcam', {
                     templateUrl: 'components/webcam/webcam.html',
                     controller: 'webcamController'
+                })
+                .when('/map', {
+                    templateUrl: 'components/map/weathermap.html',
+                    controller: 'mapController'
                 })
                 .when('/gauges', {
                     templateUrl: 'components/gauges/gauges.php',

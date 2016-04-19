@@ -4,7 +4,7 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-include ('/var/www/vhosts/darfield-weather.co.nz/httpdocs/beta/forbidden/b_rw_details.php');
+include ('/var/www/vhosts/darfield-weather.co.nz/httpdocs/forbidden/b_rw_details.php');
 
 $param_retainVal = 48;
 $param_retainUnit = 'hour';
@@ -12,7 +12,7 @@ $param_retainUnit = 'hour';
 date_default_timezone_set('Pacific/Auckland');
 $lf = '<br />';
 $SITE = array();
-$SITE['source'] = '/var/www/vhosts/darfield-weather.co.nz/httpdocs/beta/data/realtime.json';
+$SITE['source'] = '/var/www/vhosts/darfield-weather.co.nz/httpdocs/data/realtime.json';
 
 //Connect to Weather data database
 $mysqli = new mysqli($dbhost, $dbuser, $dbpassword, $database);
