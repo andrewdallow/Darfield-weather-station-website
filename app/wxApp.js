@@ -13,11 +13,12 @@
     ]);
 
     //configure routes
-    angular.module('wxApp').config(['$routeProvider', '$locationProvider',
+    angular.module('wxApp').config([
+        '$routeProvider', '$locationProvider',
         function (
             $routeProvider,
             $locationProvider
-        ) {
+            ) {
             $locationProvider.html5Mode(true);
             $locationProvider.hashPrefix('!');
             $routeProvider
@@ -64,9 +65,6 @@
                     templateUrl:
                         'components/history/graphs/historicGraphs.html',
                     controller: 'historicGraphsController'
-                })
-                .otherwise({
-                    redirectTo: '/'
                 });
         }]);
 }());

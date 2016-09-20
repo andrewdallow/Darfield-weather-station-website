@@ -74,7 +74,7 @@ check_sourceview();
 #
 ############################################################################
 $SITE['version']        = "2.0";
-$SITE['home']           = "/var/www/vhosts/darfield-weather.co.nz/httpdocs/";
+$SITE['home']           = "/var/www/vhosts/darfield-weather.co.nz/httpsdocs/";
 $SITE['datafile']       = "realtime.log";
 $SITE['source']         = "realtime.txt";
 #---------------------------------------------------------------------------

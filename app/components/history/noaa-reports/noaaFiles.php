@@ -11,7 +11,7 @@ foreach (array_reverse(glob("../../../data/reports/NOAAYR*.txt")) as $filenameYe
 
     $months = array();
 
-    foreach (glob("/var/www/vhosts/darfield-weather.co.nz/httpdocs/data/reports/NOAAMO*$year.txt") as $filenameMonth) {
+    foreach (glob("/var/www/vhosts/darfield-weather.co.nz/httpsdocs/data/reports/NOAAMO*$year.txt") as $filenameMonth) {
         $name = pathinfo($filenameMonth, PATHINFO_FILENAME);
         array_push($months,$name);
         //$months[] = $name;

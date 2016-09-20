@@ -1,29 +1,29 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 	<url>
-		<loc>http://www.darfield-weather.co.nz/wxspace.php</loc>
+		<loc>https://www.darfield-weather.co.nz/webcam</loc>
 	</url>
 	<url>
-		<loc>http://www.darfield-weather.co.nz/</loc>
+		<loc>https://www.darfield-weather.co.nz/noaa-style-reports</loc>
 	</url>
 	<url>
-		<loc>http://www.darfield-weather.co.nz/webcam</loc>
+		<loc>https://www.darfield-weather.co.nz/graphs</loc>
 	</url>
 	<url>
-		<loc>http://www.darfield-weather.co.nz/graphs</loc>
+		<loc>https://www.darfield-weather.co.nz/</loc>
 	</url>
 	<url>
-		<loc>http://www.darfield-weather.co.nz/historicGraphs</loc>
+		<loc>https://www.darfield-weather.co.nz/map</loc>
 	</url>
 	<url>
-		<loc>http://www.darfield-weather.co.nz/records</loc>
+		<loc>https://www.darfield-weather.co.nz/forecast</loc>
 	</url>
 	<url>
-		<loc>http://www.darfield-weather.co.nz/noaa-style-reports</loc>
+		<loc>https://www.darfield-weather.co.nz/about</loc>
 	</url>
 	<url>
-		<loc>http://www.darfield-weather.co.nz/forecast</loc>
+		<loc>https://www.darfield-weather.co.nz/historicGraphs</loc>
 	</url>
 	<url>
-		<loc>http://www.darfield-weather.co.nz/about</loc>
+		<loc>https://www.darfield-weather.co.nz/records</loc>
 	</url>
 </urlset>

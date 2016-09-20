@@ -76,7 +76,7 @@
 //    php importcumulusfile.php file=realtime.txt table=Realtime type=realtime key=letmein retainVal=48 retainUnit=hour
 //
 
-include ('/var/www/vhosts/darfield-weather.co.nz/httpdocs/forbidden/b_rw_details.php');
+include ('/var/www/vhosts/darfield-weather.co.nz/httpsdocs/forbidden/b_rw_details.php');
 
 //
 // The following three variables tell the system about how your

@@ -135,7 +135,7 @@ http://www.stadtaus.com/en/tutorials/chmod-ftp-file-permissions.php
 #####
 # where is the image you are downloading?
 #####
-$ImageURL = 'http://www.darfield-weather.co.nz/image.jpg';
+$ImageURL = 'https://www.darfield-weather.co.nz/image.jpg';
 # note: both samples are correct as long as they are actual image files
 # $ImageURL = 'http://www.somesite.com/radar_latest.php?site=kdmx&prod=reflectivity1';
 # $ImageURL = 'http://www.642weather.com/weather/webcamimage.jpg';
@@ -184,7 +184,7 @@ $outputimgName = 'webcamimage.jpg';
 #####
 # Local Directory - directory the images will be saved as on your server
 #####
-$localDirectory = '/var/www/vhosts/darfield-weather.co.nz/httpdocs/';
+$localDirectory = '/var/www/vhosts/darfield-weather.co.nz/httpsdocs/';
 # use $localDirectory = './'; for same folder
 # the folder must exist, you must make the folder yourself
 # must end with a slash
@@ -271,7 +271,7 @@ $refetchSeconds = 30;
 # Annotate text on image (optional, useful for text overlay on your image)
 #####
 
-include '/var/www/vhosts/darfield-weather.co.nz/httpdocs/testtags.php';
+include '/var/www/vhosts/darfield-weather.co.nz/httpsdocs/testtags.php';
 $timezone = date('T');
 //$temperature = preg_replace('°C', '  /&deg;C/', $temperature);
 $text1 = "$time $timezone $date
@@ -375,7 +375,7 @@ $archivecount = 1000;
 # newest image will be webcamimage0.jpg ... oldest image will be webcamimage12.jpg
 
 # Where will the archived images be saved
-$archivedir = '/var/www/vhosts/darfield-weather.co.nz/httpdocs/data/webcam_img/';
+$archivedir = '/var/www/vhosts/darfield-weather.co.nz/httpsdocs/data/webcam_img/';
 # use $archivedir = './'; for same folder, or something like this: $archivedir = './webcam/';
 # best to put them in their own folder though
 # the folder must exist, you must make the folder yourself

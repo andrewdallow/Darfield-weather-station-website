@@ -17,6 +17,7 @@ module.exports = function (grunt) {
                     'app/assets/js/wxApp.min.js' : [
                         'app/wxApp.js',
                         'app/mainCtrl.js',
+                        'app/intercepters.js',
                         'app/components/**/*.js',
                         'app/shared/**/*.js'
                     ],

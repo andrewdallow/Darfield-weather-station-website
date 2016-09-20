@@ -49,7 +49,7 @@
 // but not web users. Your login details will not then beexposed by crashing this
 // script.
 // e.g. ...
-include ('/var/www/vhosts/darfield-weather.co.nz/httpdocs/forbidden/b_rw_details.php');
+include ('/var/www/vhosts/darfield-weather.co.nz/httpsdocs/forbidden/b_rw_details.php');
 
 // The name of your realtime log table
 $logtable = 'Realtime';

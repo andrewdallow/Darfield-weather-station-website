@@ -1,13 +1,13 @@
 <?php
 
-include ('/var/www/vhosts/darfield-weather.co.nz/httpdocs/forbidden/b_rw_details.php');
+include ('/var/www/vhosts/darfield-weather.co.nz/httpsdocs/forbidden/b_rw_details.php');
 
 
 $lf = '<br />';
 $compassp = array('N', 'NNE', 'NE', 'ENE', 'E', 'ESE', 'SE', 'SSE', 'S', 'SSW', 'SW', 'WSW', 'W', 'WNW', 'NW', 'NNW');
 $param_table = 'Dayfile';
 $SITE = array();
-$SITE['source'] = '/var/www/vhosts/darfield-weather.co.nz/httpdocs/data/dayfile.json';
+$SITE['source'] = '/var/www/vhosts/darfield-weather.co.nz/httpsdocs/data/dayfile.json';
 $param_file = "dayfile.json";
 //
 //

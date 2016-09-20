@@ -1,0 +1,65 @@
+  RewriteEngine On
+  RewriteCond %{HTTPS} off
+  RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R,L]  
+# If requested resource exists as a file or directory
+  # (REQUEST_FILENAME is only relative in virtualhost context, so not usable)
+    RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI} -f [OR]
+    RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI} -d
+    # Go to it as is
+    RewriteRule ^.*$ - [NC,L]
+
+  # If non existent
+    # If path ends with / and is not just a single /, redirect to without the trailing /
+      RewriteCond %{REQUEST_URI} ^.*/$
+      RewriteCond %{REQUEST_URI} !^/$
+      RewriteRule ^(.*)/$ $1 [R,QSA,L]      
+
+  # Handle Prerender.io
+    RequestHeader set X-Prerender-Token "QDCK5cLvinRcl66wugUU"
+
+    RewriteCond %{HTTP_USER_AGENT} baiduspider|facebookexternalhit|twitterbot|rogerbot|linkedinbot|embedly|quora\ link\ preview|showyoubot|outbrain|pinterest [NC,OR]
+    RewriteCond %{QUERY_STRING} _escaped_fragment_
+
+    # Proxy the request
+    RewriteRule ^(.*)$ http://service.prerender.io/http://%{HTTP_HOST}/$1 [P,L]
+		
+	# If non existent
+    # Accept everything on index.html
+	RewriteRule !\.(js|gif|css|jpg|png|html|php|txt)$ /index.html#! [NC,L]
+    #RewriteRule ^ /index.html#!
+  
+
+
+## EXPIRES CACHING ##
+<IfModule mod_expires.c>
+ExpiresActive On
+ExpiresByType image/gif "access 1 month"
+ExpiresByType image/jpg "access 5 minutes"
+ExpiresByType image/png "access 1 month"
+ExpiresByType text/css "access 1 month"
+ExpiresByType text/html "access 1 month"
+ExpiresByType application/pdf "access 1 day"
+ExpiresByType text/x-javascript "access 12 hours"
+ExpiresByType application/x-shockwave-flash "access 1 day"
+ExpiresByType image/x-icon "access 1 month"
+ExpiresDefault "access 1 month"
+</IfModule>
+## EXPIRES CACHING ##
+
+
+# compress text, html, javascript, css, xml:
+AddOutputFilterByType DEFLATE text/plain
+AddOutputFilterByType DEFLATE text/html
+AddOutputFilterByType DEFLATE text/xml
+AddOutputFilterByType DEFLATE text/json
+AddOutputFilterByType DEFLATE text/css
+AddOutputFilterByType DEFLATE application/xml
+AddOutputFilterByType DEFLATE application/xhtml+xml
+AddOutputFilterByType DEFLATE application/rss+xml
+AddOutputFilterByType DEFLATE application/javascript
+AddOutputFilterByType DEFLATE application/x-javascript
+
+# Or, compress certain file types by extension:
+<files *.html>
+SetOutputFilter DEFLATE
+</files>
